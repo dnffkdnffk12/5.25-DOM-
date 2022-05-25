@@ -5,12 +5,26 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DOM script</title>  
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        /* .box_3[data-sky="sun"]{
+            font-size: 50px;
+        } */
+    </style>
 </head>
 <body>
     
     <div class="box">1</div>
     <div class="box">2</div>
     <div class="box">3</div>
+
+
+    <!-- <div class="box box_3" data-sky="sun">3</div> -->
 
 
     <!-- 반드시 바디 최 하단에 스크립트를 작성해야 원하는 선택자를 선택할 수 있음 -->
@@ -39,9 +53,21 @@
         // // 여러 클래스를 선택할 수 있음
         // // 단, 결과가 배열 형태로 나옴
         // // 원하는 선택자를 선택하고 싶을땐 배열형식으로 선택
-
-
+        // -------------------------------------
+        // <data->
+        // attribute 속성 / setAttribute 속성설정
         
+        const boxEl_1 = document.querySelector('.box:nth-child(1)');
+        // console.log(boxEl_1);
+        boxEl_1.setAttribute('data-chiken', 'BBQ');
+        // html에 자동으로 추가됨(속성, 값)
+        // data속성을 세팅해줌
+        // 선택자.setAttribute('data-이름', 값)
+
+        const getAttr = boxEl_1.getAttribute('data-chiken')
+        console.log(getAttr)
+        // 세팅된 Attribute를 가져올수 있음
+        // 선택자.getAttribute('data-이름')
 
     </script>
 
